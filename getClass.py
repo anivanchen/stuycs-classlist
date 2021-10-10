@@ -3,8 +3,10 @@ from bs4 import BeautifulSoup
 
 print("Enter your teacher's name in the format firstInitialLastName. Example: dholmes")
 teacherName = str(input('Teacher Name (ex. dholmes): '))
+print("Enter your term name in the format [fall/spring]year. Example: fall2021")
+term = str(input("Enter the term (fall2021): "))
 
-url = 'http://bert.stuy.edu/{}/fall2021/pages.py?page=submit_homework'.format(teacherName)
+url = 'http://bert.stuy.edu/{}/{}/pages.py?page=submit_homework'.format(teacherName, term)
 page = requests.get(url)
 substring = ''
 
